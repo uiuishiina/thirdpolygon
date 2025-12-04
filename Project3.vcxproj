@@ -22,25 +22,33 @@
     <ClCompile Include="DirectX\CommandAllocator.cpp" />
     <ClCompile Include="DirectX\CommandList.cpp" />
     <ClCompile Include="DirectX\CommandQueue.cpp" />
+    <ClCompile Include="DirectX\CompileShader.cpp" />
     <ClCompile Include="DirectX\Descripter_Heap.cpp" />
     <ClCompile Include="DirectX\Device.cpp" />
     <ClCompile Include="DirectX\DXGI.cpp" />
     <ClCompile Include="DirectX\Fence.cpp" />
+    <ClCompile Include="DirectX\Pipline_state.cpp" />
     <ClCompile Include="DirectX\RenderTarget.cpp" />
+    <ClCompile Include="DirectX\Root_signature.cpp" />
     <ClCompile Include="DirectX\SwapChain.cpp" />
     <ClCompile Include="entry\App.cpp" />
+    <ClCompile Include="polygon\Drow_Polygon.cpp" />
     <ClCompile Include="window\window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX\CommandAllocator.h" />
     <ClInclude Include="DirectX\CommandList.h" />
     <ClInclude Include="DirectX\CommandQueue.h" />
+    <ClInclude Include="DirectX\CompileShader.h" />
     <ClInclude Include="DirectX\Descripter_Heap.h" />
     <ClInclude Include="DirectX\Device.h" />
     <ClInclude Include="DirectX\DXGI.h" />
     <ClInclude Include="DirectX\Fence.h" />
+    <ClInclude Include="DirectX\Pipline_state.h" />
     <ClInclude Include="DirectX\RenderTarget.h" />
+    <ClInclude Include="DirectX\Root_signature.h" />
     <ClInclude Include="DirectX\SwapChain.h" />
+    <ClInclude Include="polygon\Drow_Polygon.h" />
     <ClInclude Include="window\window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

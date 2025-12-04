@@ -1,4 +1,4 @@
-
+ï»¿
 //------  App.cpp  ------
 
 
@@ -31,81 +31,81 @@ public:
 	App() = default;
 	~App() = default;
 
-	//ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®
+	//ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³èµ·å‹•
 	[[nodiscard]] bool Initialize(HINSTANCE instance)noexcept
 	{
-		//windowì¬
+		//windowä½œæˆ
 		if (!window_.crate(instance, 1280, 720, App_Name)) {
-			assert(false && "ƒEƒBƒ“ƒhƒE‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!DXGI_.setDisplayAdapter()) {
-			assert(false && "DXGIƒAƒ_ƒvƒ^[‚Ìİ’è‚É¸”s(App)");
+			assert(false && "DXGIã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã®è¨­å®šã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!Device_.create(DXGI_)) {
-			assert(false && "ƒfƒoƒCƒX‚Ìì¬‚É¸”s(App)");
+			assert(false && "ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 		
 		//
 		if (!Queue_.create(Device_)) {
-			assert(false && "ƒRƒ}ƒ“ƒhƒLƒ…[‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚³ãƒãƒ³ãƒ‰ã‚­ãƒ¥ãƒ¼ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!SwapChain_.create(DXGI_, Queue_, window_)) {
-			assert(false && "ƒXƒƒbƒvƒ`ƒF[ƒ“‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚¹ãƒ¯ãƒƒãƒ—ãƒã‚§ãƒ¼ãƒ³ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!Descripter_.create(Device_, D3D12_DESCRIPTOR_HEAP_TYPE_RTV, SwapChain_.getDesc().BufferCount)) {
-			assert(false && "ƒfƒBƒXƒNƒŠƒvƒ^[ƒq[ƒv‚Ìì¬‚É¸”s(App)");
+			assert(false && "ãƒ‡ã‚£ã‚¹ã‚¯ãƒªãƒ—ã‚¿ãƒ¼ãƒ’ãƒ¼ãƒ—ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!RenderTarget_.create(Device_,SwapChain_,Descripter_)) {
-			assert(false && "ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ìì¬‚É¸”s(App)");
+			assert(false && "ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!Allocator_[0].create(Device_, D3D12_COMMAND_LIST_TYPE_DIRECT)) {
-			assert(false && "ƒRƒ}ƒ“ƒhƒAƒƒP[ƒ^[‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚³ãƒãƒ³ãƒ‰ã‚¢ãƒ­ã‚±ãƒ¼ã‚¿ãƒ¼ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 		if (!Allocator_[1].create(Device_, D3D12_COMMAND_LIST_TYPE_DIRECT)) {
-			assert(false && "ƒRƒ}ƒ“ƒhƒAƒƒP[ƒ^[‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚³ãƒãƒ³ãƒ‰ã‚¢ãƒ­ã‚±ãƒ¼ã‚¿ãƒ¼ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!CommandList_.create(Device_, Allocator_[0])) {
-			assert(false && "ƒRƒ}ƒ“ƒhƒŠƒXƒg‚Ìì¬‚É¸”s(App)");
+			assert(false && "ã‚³ãƒãƒ³ãƒ‰ãƒªã‚¹ãƒˆã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
 		//
 		if (!Fence_.create(Device_)) {
-			assert(false && "ƒtƒFƒ“ƒX‚Ìì¬‚É¸”s(App)");
+			assert(false && "ãƒ•ã‚§ãƒ³ã‚¹ã®ä½œæˆã«å¤±æ•—(App)");
 			return false;
 		}
 
-		//‚·‚×‚Ä¬Œ÷‚È‚çtrue
+		//ã™ã¹ã¦æˆåŠŸãªã‚‰true
 		return true;
 	}
 
-	//ƒ‹[ƒvˆ—
+	//ãƒ«ãƒ¼ãƒ—å‡¦ç†
 	void Loop()noexcept {
 		while (window_.messegeLoop()) {
-			//Œ»İ‚ÌƒoƒbƒNƒoƒbƒtƒ@ƒCƒ“ƒfƒbƒNƒX‚ğæ“¾
+			//ç¾åœ¨ã®ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—
 			const auto BufferIndex = SwapChain_.get()->GetCurrentBackBufferIndex();
 
 			if (FrameFenceValue_[BufferIndex] != 0) {
@@ -169,34 +169,34 @@ public:
 		return barrier;
 	}
 private:
-	window				window_{};		//ƒEƒBƒ“ƒhƒEƒNƒ‰ƒXƒCƒ“ƒXƒ^ƒ“ƒX
-	DXGI				DXGI_{};		//DXGIƒCƒ“ƒXƒ^ƒ“ƒX
-	Device				Device_{};		//DeviceƒCƒ“ƒXƒ^ƒ“ƒX
-	CommandQueue		Queue_{};		//CommandQueueƒCƒ“ƒXƒ^ƒ“ƒX
-	SwapChain			SwapChain_{};	//SwapChianƒCƒ“ƒXƒ^ƒ“ƒX
-	Descripter_Heap		Descripter_{};	//Descripter_HeapƒCƒ“ƒXƒ^ƒ“ƒX
-	RenderTarget		RenderTarget_{};//RenderTargetƒCƒ“ƒXƒ^ƒ“ƒX
-	CommandAllocator	Allocator_[2]{};//CommandAllocatorƒCƒ“ƒXƒ^ƒ“ƒX
-	CommandList			CommandList_{};	//CommandListƒCƒ“ƒXƒ^ƒ“ƒX
+	window				window_{};		//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	DXGI				DXGI_{};		//DXGIã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	Device				Device_{};		//Deviceã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	CommandQueue		Queue_{};		//CommandQueueã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	SwapChain			SwapChain_{};	//SwapChianã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	Descripter_Heap		Descripter_{};	//Descripter_Heapã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	RenderTarget		RenderTarget_{};//RenderTargetã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	CommandAllocator	Allocator_[2]{};//CommandAllocatorã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	CommandList			CommandList_{};	//CommandListã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
 
 
 
 
-	Fence	Fence_{};				//FenceƒCƒ“ƒXƒ^ƒ“ƒX
-	UINT64	FrameFenceValue_[2]{};	//Œ»İƒtƒŒ[ƒ€‚Ì’l
-	UINT	nextFenceValue_ = 1;		//Ÿ‚ÌƒtƒŒ[ƒ€‚Ì’l
+	Fence	Fence_{};				//Fenceã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+	UINT64	FrameFenceValue_[2]{};	//ç¾åœ¨ãƒ•ãƒ¬ãƒ¼ãƒ ã®å€¤
+	UINT	nextFenceValue_ = 1;		//æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã®å€¤
 
 
 };
 
-//ŠJnŠÖ”
+//é–‹å§‹é–¢æ•°
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	App app;
 
-	//ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì‹N“®
+	//ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®èµ·å‹•
 	if (!app.Initialize(hInstance)) {
-		assert(false && "ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì‹N“®‚É¸”s");
+		assert(false && "ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®èµ·å‹•ã«å¤±æ•—");
 	}
 
 	app.Loop();
