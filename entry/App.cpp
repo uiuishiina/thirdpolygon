@@ -16,8 +16,11 @@
 #include"../DirectX/CommandAllocator.h"
 #include"../DirectX/CommandList.h"
 #include"../DirectX/Fence.h"
-//------  shader  ------
-
+#include"../DirectX/Root_signature.h"
+#include"../DirectX/CompileShader.h"
+#include"../DirectX/Pipline_state.h"
+//------  Polygon  ------
+#include"../Polygon/Drow_Polygon.h"
 //------ End.#include ------
 
 
@@ -98,6 +101,30 @@ public:
 			return false;
 		}
 
+		//
+		if (!Root_.create(Device_)) {
+			assert(false && "ルートシグネチャーの作成に失敗(App)");
+			return false;
+		}
+
+		//
+		if (!Shader_.create(Device_)) {
+			assert(false && "シェーダーの作成に失敗(App)");
+			return false;
+		}
+
+		//
+		if (!Pipline_.create(Device_, Shader_, Root_)) {
+			assert(false&&"パイプラインステートの作成に失敗(App)");
+			return false;
+		}
+
+		//
+		if (!DrowPolygon_.createTriangle(Device_)) {
+			assert(false && "三角形のポリゴンの作成に失敗(App)");
+			return false;
+		}
+
 		//すべて成功ならtrue
 		return true;
 	}
@@ -125,18 +152,32 @@ public:
 			CommandList_.get()->ClearRenderTargetView(handle[0], ClearColor, 0, nullptr);
 
 			//
+			// パイプラインステートの設定
+				CommandList_.get()->SetPipelineState(Pipline_.get());
+			// ルートシグネチャの設定
+				CommandList_.get()->SetGraphicsRootSignature(Root_.get());
 
+			// ビューポートの設定
+			const auto [w, h] = window_.getSize();
+			D3D12_VIEWPORT viewport{};
+			viewport.TopLeftX = 0.0f;
+			viewport.TopLeftY = 0.0f;
+			viewport.Width = static_cast<float>(w);
+			viewport.Height = static_cast<float>(h);
+			viewport.MinDepth = 0.0f;
+			viewport.MaxDepth = 1.0f;
+			CommandList_.get()->RSSetViewports(1, &viewport);
 
+			// シザー矩形の設定
+			D3D12_RECT scissorRect{};
+			scissorRect.left = 0;
+			scissorRect.top = 0;
+			scissorRect.right = w;
+			scissorRect.bottom = h;
+			CommandList_.get()->RSSetScissorRects(1, &scissorRect);
 
-
-
-
-
-
-
-
-
-
+			// ポリゴンの描画
+			DrowPolygon_.Draw(CommandList_);
 
 
 			//
@@ -179,14 +220,14 @@ private:
 	CommandAllocator	Allocator_[2]{};//CommandAllocatorインスタンス
 	CommandList			CommandList_{};	//CommandListインスタンス
 
-
-
-
 	Fence	Fence_{};				//Fenceインスタンス
 	UINT64	FrameFenceValue_[2]{};	//現在フレームの値
 	UINT	nextFenceValue_ = 1;		//次のフレームの値
 
-
+	RootSignature	Root_{};		//ルートシグネチャーインスタンス
+	CompileShader	Shader_{};		//コンパイルシェーダーインスタンス
+	Pipline			Pipline_{};		//パイプラインステートインスタンス
+	Drow_Polygon	DrowPolygon_{};	//ポリゴン描画インスタンス
 };
 
 //開始関数

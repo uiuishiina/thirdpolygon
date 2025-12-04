@@ -32,6 +32,7 @@
     <ClCompile Include="DirectX\Root_signature.cpp" />
     <ClCompile Include="DirectX\SwapChain.cpp" />
     <ClCompile Include="entry\App.cpp" />
+    <ClCompile Include="polygon\Draw_Switch.cpp" />
     <ClCompile Include="polygon\Drow_Polygon.cpp" />
     <ClCompile Include="window\window.cpp" />
   </ItemGroup>

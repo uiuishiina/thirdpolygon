@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\User\\Documents\\thirdpolygon\\",
+  "WorkspaceRootPath": "C:\\Users\\shiin\\source\\Polygon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:polygon\\Drow_Polygon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|C:\\Users\\shiin\\source\\Polygon\\DirectX\\CompileShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:DirectX\\CompileShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:polygon\\Drow_Polygon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\shiin\\source\\Polygon\\Shader\\VertexShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shader\\VertexShader.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|D:\\User\\Documents\\thirdpolygon\\entry\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|C:\\Users\\shiin\\source\\Polygon\\entry\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:entry\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|C:\\Users\\shiin\\source\\Polygon\\window\\window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:window\\window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|C:\\Users\\shiin\\source\\Polygon\\polygon\\Drow_Polygon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{056B0325-8DAA-4E3C-8843-7CE8117AA5A1}|Project3.vcxproj|solutionrelative:polygon\\Drow_Polygon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Drow_Polygon.cpp",
-              "DocumentMoniker": "D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.cpp",
-              "RelativeDocumentMoniker": "polygon\\Drow_Polygon.cpp",
-              "ToolTip": "D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.cpp",
-              "RelativeToolTip": "polygon\\Drow_Polygon.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAD4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-04T07:06:47.984Z",
+              "DocumentIndex": 1,
+              "Title": "VertexShader.hlsl",
+              "DocumentMoniker": "C:\\Users\\shiin\\source\\Polygon\\Shader\\VertexShader.hlsl",
+              "RelativeDocumentMoniker": "Shader\\VertexShader.hlsl",
+              "ToolTip": "C:\\Users\\shiin\\source\\Polygon\\Shader\\VertexShader.hlsl",
+              "RelativeToolTip": "Shader\\VertexShader.hlsl",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-12-04T12:37:54.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Drow_Polygon.h",
-              "DocumentMoniker": "D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.h",
-              "RelativeDocumentMoniker": "polygon\\Drow_Polygon.h",
-              "ToolTip": "D:\\User\\Documents\\thirdpolygon\\polygon\\Drow_Polygon.h",
-              "RelativeToolTip": "polygon\\Drow_Polygon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA6AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CompileShader.cpp",
+              "DocumentMoniker": "C:\\Users\\shiin\\source\\Polygon\\DirectX\\CompileShader.cpp",
+              "RelativeDocumentMoniker": "DirectX\\CompileShader.cpp",
+              "ToolTip": "C:\\Users\\shiin\\source\\Polygon\\DirectX\\CompileShader.cpp",
+              "RelativeToolTip": "DirectX\\CompileShader.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA4wBMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-04T12:23:58.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "window.h",
+              "DocumentMoniker": "C:\\Users\\shiin\\source\\Polygon\\window\\window.h",
+              "RelativeDocumentMoniker": "window\\window.h",
+              "ToolTip": "C:\\Users\\shiin\\source\\Polygon\\window\\window.h",
+              "RelativeToolTip": "window\\window.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-04T06:58:22.266Z",
+              "WhenOpened": "2025-12-04T12:22:14.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Drow_Polygon.cpp",
+              "DocumentMoniker": "C:\\Users\\shiin\\source\\Polygon\\Polygon\\Drow_Polygon.cpp",
+              "RelativeDocumentMoniker": "Polygon\\Drow_Polygon.cpp",
+              "ToolTip": "C:\\Users\\shiin\\source\\Polygon\\Polygon\\Drow_Polygon.cpp",
+              "RelativeToolTip": "Polygon\\Drow_Polygon.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-04T12:03:59.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "App.cpp",
-              "DocumentMoniker": "D:\\User\\Documents\\thirdpolygon\\entry\\App.cpp",
+              "DocumentMoniker": "C:\\Users\\shiin\\source\\Polygon\\entry\\App.cpp",
               "RelativeDocumentMoniker": "entry\\App.cpp",
-              "ToolTip": "D:\\User\\Documents\\thirdpolygon\\entry\\App.cpp",
+              "ToolTip": "C:\\Users\\shiin\\source\\Polygon\\entry\\App.cpp",
               "RelativeToolTip": "entry\\App.cpp",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAHsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAA2wLMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-04T06:01:23.418Z",
               "EditorCaption": ""

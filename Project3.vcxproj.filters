@@ -72,6 +72,9 @@
     <ClCompile Include="DirectX\CompileShader.cpp">
       <Filter>DirectX</Filter>
     </ClCompile>
+    <ClCompile Include="polygon\Draw_Switch.cpp">
+      <Filter>Polygon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window\window.h">

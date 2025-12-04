@@ -1,47 +1,31 @@
-﻿
-//------  VertexShader.hlsl  ------
-
-
-struct Vertex   //------  頂点入力構造体
+﻿struct VSInput
 {
-    /*
-    
-    
-    */
-    float3 Postion  : POSITION;
-    float4 Color    : COLOR;
+    float3 position : POSITION;
+    float4 color : COLOR;
 };
 
-struct VertexOutput //------  頂点出力構造体
+struct VSOutput
 {
-    /*
-    
-    */
-    float3 Postion  : SV_POSITION;
-    float4 Color    : COLOR;
+    float4 position : SV_POSITION;
+    float4 color : COLOR;
 };
 
-struct PixelInput   //------  ピクセル入力構造体
+struct PSInput
 {
-    /*
-    
-    */
-    float3 Postion  : SV_POSITION;
-    float4 Color    : COLOR;
+    float4 position : SV_POSITION;
+    float4 color : COLOR;
 };
 
-//------  頂点シェーダー  ------
-VertexOutput vs(Vertex input)
+VSOutput vs(VSInput input)
 {
-    VertexOutput output;
-
-    output.Postion = float4(input.Postion, 1.0f);
-    output.Color = input.Color;
+    VSOutput output;
+    output.position = float4(input.position, 1.0f);
+    output.color = input.color;
+    
     return output;
 }
 
-//------  ピクセルシェーダー  ------
-float4 ps(PixelInput input) : SV_TARGET
+float4 ps(PSInput input) : SV_TARGET
 {
-    return input.Color;
+    return input.color;
 }
