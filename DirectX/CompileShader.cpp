@@ -58,7 +58,7 @@ CompileShader :: ~CompileShader() {
 
 //ピクセルシェーダー取得
 [[nodiscard]] ID3DBlob* CompileShader :: getPixelShader()const noexcept	{
-	if (PixelShader_) {
+	if (!PixelShader_) {
 		assert(false && "ピクセルシェーダーが未作成");
 	}
 	return PixelShader_;

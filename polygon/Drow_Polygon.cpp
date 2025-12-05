@@ -19,15 +19,15 @@ Drow_Polygon :: ~Drow_Polygon() {
 	}
 }
 
-[[nodiscard]] bool Drow_Polygon :: create(const Device& device, const Data& data)noexcept
+[[nodiscard]] bool Drow_Polygon :: create(const Device& device, const PG::PoNum num)noexcept
 {
 	//
-	if (!createVertexBuffer(device,data)) {
+	if (!createVertexBuffer(device,num)) {
 		assert(false && "頂点バッファの作成に失敗");
 		return false;
 	}
 
-	if (!createIndexBuffer(device,data)) {
+	if (!createIndexBuffer(device,num)) {
 		assert(false && "インデックスバッファの作成に失敗");
 		return false;
 	}
@@ -50,9 +50,9 @@ Drow_Polygon :: ~Drow_Polygon() {
 }
 
 //
-[[nodiscard]] bool Drow_Polygon :: createVertexBuffer(const Device& device, const PG::Data& data)noexcept
+[[nodiscard]] bool Drow_Polygon :: createVertexBuffer(const Device& device, const PG::PoNum num)noexcept
 {
-	const auto VertexBufferSize = sizeof(data.Buffer_);
+	const auto VertexBufferSize = sizeof(VerT);
 
 	D3D12_HEAP_PROPERTIES Propety{};
 	Propety.Type					= D3D12_HEAP_TYPE_UPLOAD;
@@ -82,14 +82,14 @@ Drow_Polygon :: ~Drow_Polygon() {
 		return false;
 	}
 
-	Vertex* V{};
-	hr = VertexBuffer_->Map(0, nullptr, reinterpret_cast<void**>(&V));
+	Vertex* v{};
+	hr = VertexBuffer_->Map(0, nullptr, reinterpret_cast<void**>(&v));
 	if (FAILED(hr)) {
 		assert(false && "頂点バッファのマップに失敗");
 		return false;
 	}
 
-	memcpy_s(V, VertexBufferSize, data.Buffer_.data(), VertexBufferSize);
+	memcpy_s(v, VertexBufferSize, VerT, VertexBufferSize);
 
 	VertexBuffer_->Unmap(0, nullptr);
 
@@ -100,9 +100,9 @@ Drow_Polygon :: ~Drow_Polygon() {
 }
 
 //
-[[nodiscard]] bool Drow_Polygon :: createIndexBuffer(const Device& device, const PG::Data& data)noexcept
+[[nodiscard]] bool Drow_Polygon :: createIndexBuffer(const Device& device, const PG::PoNum num)noexcept
 {
-	const auto IndexBufferSize = sizeof(data.Index_);
+	const auto IndexBufferSize = sizeof(Index_);
 
 	D3D12_HEAP_PROPERTIES Propety{};
 	Propety.Type					= D3D12_HEAP_TYPE_UPLOAD;
@@ -139,7 +139,7 @@ Drow_Polygon :: ~Drow_Polygon() {
 		return false;
 	}
 
-	memcpy_s(T, IndexBufferSize, &data.Index_, IndexBufferSize);
+	memcpy_s(T, IndexBufferSize, Index_, IndexBufferSize);
 
 	IndexBuffer_->Unmap(0, nullptr);
 

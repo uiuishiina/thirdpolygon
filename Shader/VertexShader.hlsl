@@ -1,31 +1,31 @@
-﻿struct VSInput
+
+struct VertexInput
 {
-    float3 position : POSITION;
-    float4 color : COLOR;
+    float3 Position : POSITION;
+    float4 Color : COLOR;
 };
 
-struct VSOutput
+struct VertexOutput
 {
-    float4 position : SV_POSITION;
-    float4 color : COLOR;
+    float4 Position : SV_POSITION;
+    float4 Color : COLOR;
 };
 
-struct PSInput
+struct PixelIutput
 {
-    float4 position : SV_POSITION;
-    float4 color : COLOR;
+    float4 Position : SV_POSITION;
+    float4 Color : COLOR;
 };
 
-VSOutput vs(VSInput input)
+VertexOutput vs(VertexInput input)
 {
-    VSOutput output;
-    output.position = float4(input.position, 1.0f);
-    output.color = input.color;
-    
+    VertexOutput output;
+    output.Position = float4(input.Position, 1.0f);
+    output.Color = input.Color;
     return output;
 }
 
-float4 ps(PSInput input) : SV_TARGET
+float4 ps(PixelIutput input):SV_TARGET
 {
-    return input.color;
+    return input.Color;
 }

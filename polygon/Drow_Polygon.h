@@ -15,11 +15,19 @@ namespace PG {
 		DirectX::XMFLOAT4 Color;
 	};
 	//------  ポリゴンの種類分け用構造体  ------
-	struct Data
-	{
-		std::vector<Vertex> Buffer_;
-		uint16_t Index_;
-		D3D_PRIMITIVE_TOPOLOGY UseTopology_;
+	/*
+	*/
+	static Vertex VerT[] = {
+		{ { 0, 0.5f, 0 }, { 1,	0,	0,	1 } },
+	{ {		0.5f,	-0.5f,		0},	{	0,	1,	0,	1} },
+	{ {		-0.5f,	-0.5f,		0},	{	0,	0,	1,	1} }
+	};
+
+	static uint16_t Index_[] = { 0,1,2 };
+
+
+	enum PoNum {
+		Triangle
 	};
 }
 
@@ -33,7 +41,7 @@ public:
 	~Drow_Polygon();
 
 	//ポリゴン生成
-	[[nodiscard]] bool create(const Device& device,const PG::Data& data)noexcept;
+	[[nodiscard]] bool create(const Device& device,const PG::PoNum num)noexcept;
 
 	//描画指示
 	[[nodiscard]] void Draw(const CommandList& List)noexcept;
@@ -43,10 +51,10 @@ public:
 private:
 
 	//頂点バッファ作成
-	[[nodiscard]] bool createVertexBuffer(const Device& device, const PG::Data& data)noexcept;
+	[[nodiscard]] bool createVertexBuffer(const Device& device, const PG::PoNum num)noexcept;
 
 	//インデックスバッファ作成
-	[[nodiscard]] bool createIndexBuffer(const Device& device, const PG::Data& data)noexcept;
+	[[nodiscard]] bool createIndexBuffer(const Device& device, const PG::PoNum num)noexcept;
 
 	//三角形作成
 	
@@ -56,6 +64,4 @@ private:
 
 	D3D12_VERTEX_BUFFER_VIEW	VertexBufferView_{};
 	D3D12_INDEX_BUFFER_VIEW		IndexBufferView_{};
-
-	PG::Data UseData_;
 };
